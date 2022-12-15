@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results ignored="0" total="28" passed="28" failed="0" skipped="0">
+  <reporter-output>
+  </reporter-output>
+  <suite started-at="2022-12-15T15:03:08 MSK" name="Surefire suite" finished-at="2022-12-15T15:09:31 MSK" duration-ms="383090">
+    <groups>
+    </groups>
+    <test started-at="2022-12-15T15:03:08 MSK" name="Surefire test" finished-at="2022-12-15T15:09:31 MSK" duration-ms="383090">
+      <class name="ru.yandex.praktikum.TransitionTest">
+        <test-method signature="TransitionInFillingsTest()" started-at="2022-12-15T15:07:31 MSK" name="TransitionInFillingsTest[0]" finished-at="2022-12-15T15:07:40 MSK" duration-ms="9255" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- TransitionInFillingsTest[0] -->
+        <test-method signature="logInTransitionInMainPageAcrossLogoTipTest()" started-at="2022-12-15T15:07:31 MSK" name="logInTransitionInMainPageAcrossLogoTipTest[0]" finished-at="2022-12-15T15:08:04 MSK" duration-ms="33191" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- logInTransitionInMainPageAcrossLogoTipTest[0] -->
+        <test-method signature="TransitionInSousTest()" started-at="2022-12-15T15:07:31 MSK" name="TransitionInSousTest[0]" finished-at="2022-12-15T15:08:22 MSK" duration-ms="51070" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- TransitionInSousTest[0] -->
+        <test-method signature="logInTransitionInMainPageAcrossConstructorTest()" started-at="2022-12-15T15:07:31 MSK" name="logInTransitionInMainPageAcrossConstructorTest[0]" finished-at="2022-12-15T15:07:54 MSK" duration-ms="23267" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- logInTransitionInMainPageAcrossConstructorTest[0] -->
+        <test-method signature="logInTransitionInPersonalAccountTest()" started-at="2022-12-15T15:07:31 MSK" name="logInTransitionInPersonalAccountTest[0]" finished-at="2022-12-15T15:08:13 MSK" duration-ms="42316" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- logInTransitionInPersonalAccountTest[0] -->
+        <test-method signature="logInTransitionInMainPageAcrossConstructorTest()" started-at="2022-12-15T15:07:31 MSK" name="logInTransitionInMainPageAcrossConstructorTest[1]" finished-at="2022-12-15T15:08:50 MSK" duration-ms="79139" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- logInTransitionInMainPageAcrossConstructorTest[1] -->
+        <test-method signature="logInTransitionInMainPageAcrossLogoTipTest()" started-at="2022-12-15T15:07:31 MSK" name="logInTransitionInMainPageAcrossLogoTipTest[1]" finished-at="2022-12-15T15:08:59 MSK" duration-ms="87817" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- logInTransitionInMainPageAcrossLogoTipTest[1] -->
+        <test-method signature="TransitionInFillingsTest()" started-at="2022-12-15T15:07:31 MSK" name="TransitionInFillingsTest[1]" finished-at="2022-12-15T15:08:41 MSK" duration-ms="70008" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- TransitionInFillingsTest[1] -->
+        <test-method signature="TransitionInBulkTest()" started-at="2022-12-15T15:07:31 MSK" name="TransitionInBulkTest[0]" finished-at="2022-12-15T15:08:33 MSK" duration-ms="61587" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- TransitionInBulkTest[0] -->
+        <test-method signature="TransitionInBulkTest()" started-at="2022-12-15T15:07:31 MSK" name="TransitionInBulkTest[1]" finished-at="2022-12-15T15:09:31 MSK" duration-ms="120350" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- TransitionInBulkTest[1] -->
+        <test-method signature="TransitionInSousTest()" started-at="2022-12-15T15:07:31 MSK" name="TransitionInSousTest[1]" finished-at="2022-12-15T15:09:18 MSK" duration-ms="107127" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- TransitionInSousTest[1] -->
+        <test-method signature="logInTransitionInPersonalAccountTest()" started-at="2022-12-15T15:07:31 MSK" name="logInTransitionInPersonalAccountTest[1]" finished-at="2022-12-15T15:09:08 MSK" duration-ms="97365" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- logInTransitionInPersonalAccountTest[1] -->
+      </class> <!-- ru.yandex.praktikum.TransitionTest -->
+      <class name="ru.yandex.praktikum.LogInTest">
+        <test-method signature="logInAcrossPersonalAccountTest()" started-at="2022-12-15T15:03:09 MSK" name="logInAcrossPersonalAccountTest[0]" finished-at="2022-12-15T15:03:34 MSK" duration-ms="25321" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- logInAcrossPersonalAccountTest[0] -->
+        <test-method signature="logInAcrossButtonOnMainTest()" started-at="2022-12-15T15:03:09 MSK" name="logInAcrossButtonOnMainTest[0]" finished-at="2022-12-15T15:03:49 MSK" duration-ms="40115" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- logInAcrossButtonOnMainTest[0] -->
+        <test-method signature="logInAcrossFormReanimatePasswordTest()" started-at="2022-12-15T15:03:09 MSK" name="logInAcrossFormReanimatePasswordTest[0]" finished-at="2022-12-15T15:04:04 MSK" duration-ms="55785" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- logInAcrossFormReanimatePasswordTest[0] -->
+        <test-method signature="logInAcrossFormRegistrationTest()" started-at="2022-12-15T15:03:09 MSK" name="logInAcrossFormRegistrationTest[0]" finished-at="2022-12-15T15:04:30 MSK" duration-ms="81140" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- logInAcrossFormRegistrationTest[0] -->
+        <test-method signature="logOutTest()" started-at="2022-12-15T15:03:09 MSK" name="logOutTest[0]" finished-at="2022-12-15T15:04:20 MSK" duration-ms="71839" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- logOutTest[0] -->
+        <test-method signature="logInAcrossPersonalAccountTest()" started-at="2022-12-15T15:03:09 MSK" name="logInAcrossPersonalAccountTest[1]" finished-at="2022-12-15T15:04:53 MSK" duration-ms="104003" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- logInAcrossPersonalAccountTest[1] -->
+        <test-method signature="logInAcrossButtonOnMainTest()" started-at="2022-12-15T15:03:09 MSK" name="logInAcrossButtonOnMainTest[1]" finished-at="2022-12-15T15:05:21 MSK" duration-ms="132551" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- logInAcrossButtonOnMainTest[1] -->
+        <test-method signature="logInAcrossFormReanimatePasswordTest()" started-at="2022-12-15T15:03:09 MSK" name="logInAcrossFormReanimatePasswordTest[1]" finished-at="2022-12-15T15:05:33 MSK" duration-ms="144729" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- logInAcrossFormReanimatePasswordTest[1] -->
+        <test-method signature="logOutTest()" started-at="2022-12-15T15:03:09 MSK" name="logOutTest[1]" finished-at="2022-12-15T15:05:50 MSK" duration-ms="161464" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- logOutTest[1] -->
+        <test-method signature="logInAcrossFormRegistrationTest()" started-at="2022-12-15T15:03:09 MSK" name="logInAcrossFormRegistrationTest[1]" finished-at="2022-12-15T15:06:10 MSK" duration-ms="181099" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- logInAcrossFormRegistrationTest[1] -->
+      </class> <!-- ru.yandex.praktikum.LogInTest -->
+      <class name="ru.yandex.praktikum.RegistrationTest">
+        <test-method signature="registrationWithCorrectPasswordTest()" started-at="2022-12-15T15:06:10 MSK" name="registrationWithCorrectPasswordTest[0]" finished-at="2022-12-15T15:06:27 MSK" duration-ms="16764" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- registrationWithCorrectPasswordTest[0] -->
+        <test-method signature="registrationWithExistUserTest()" started-at="2022-12-15T15:06:10 MSK" name="registrationWithExistUserTest[0]" finished-at="2022-12-15T15:06:52 MSK" duration-ms="41895" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- registrationWithExistUserTest[0] -->
+        <test-method signature="registrationWithCorrectPasswordTest()" started-at="2022-12-15T15:06:10 MSK" name="registrationWithCorrectPasswordTest[1]" finished-at="2022-12-15T15:07:03 MSK" duration-ms="53196" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- registrationWithCorrectPasswordTest[1] -->
+        <test-method signature="registrationWithIncorrectPasswordTest()" started-at="2022-12-15T15:06:10 MSK" name="registrationWithIncorrectPasswordTest[0]" finished-at="2022-12-15T15:06:40 MSK" duration-ms="30258" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- registrationWithIncorrectPasswordTest[0] -->
+        <test-method signature="registrationWithIncorrectPasswordTest()" started-at="2022-12-15T15:06:10 MSK" name="registrationWithIncorrectPasswordTest[1]" finished-at="2022-12-15T15:07:18 MSK" duration-ms="67817" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- registrationWithIncorrectPasswordTest[1] -->
+        <test-method signature="registrationWithExistUserTest()" started-at="2022-12-15T15:06:10 MSK" name="registrationWithExistUserTest[1]" finished-at="2022-12-15T15:07:31 MSK" duration-ms="80844" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- registrationWithExistUserTest[1] -->
+      </class> <!-- ru.yandex.praktikum.RegistrationTest -->
+    </test> <!-- Surefire test -->
+  </suite> <!-- Surefire suite -->
+</testng-results>
