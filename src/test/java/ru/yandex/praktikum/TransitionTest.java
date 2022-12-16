@@ -79,27 +79,27 @@ public class TransitionTest {
     }
 
     @Test
-    public void TransitionInSousTest() {
+    public void transitionInSousTest() throws InterruptedException {
         boolean flag = page.open()
                 .clickSousButton()
-                .checkButtonSousSpicyX();
+                .checkButtonSousLight();
         assertTrue(flag);
     }
 
     @Test
-    public void TransitionInBulkTest() {
+    public void transitionInBulkTest() throws InterruptedException {
         boolean flag = page.open()
                 .clickSousButton()
                 .clickBulksButton()
-                .checkButtonFlBulksR2D3();
+                .checkButtonBulksLight();
         assertTrue(flag);
     }
 
     @Test
-    public void TransitionInFillingsTest() {
+    public void transitionInFillingsTest() throws InterruptedException {
         boolean flag = page.open()
                 .clickFillingsButton()
-                .checkButtonFillingsProtostomia();
+                .checkButtonFillingsLight();
         assertTrue(flag);
     }
 

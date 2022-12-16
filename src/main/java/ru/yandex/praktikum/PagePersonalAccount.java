@@ -14,12 +14,10 @@ public class PagePersonalAccount {
     }
 
     //локатор поля ввода email
-    private final By fieldEmail = By.xpath
-            ("html/body/div[@id='root']/div/main/div/form/fieldset[1]/div/div/input");
+    private final By fieldEmail = By.xpath(".//input[@name = 'name']");
 
     //локатор поля ввода password
-    private final By fieldPassword = By.xpath
-            ("html/body/div[@id='root']/div/main/div/form/fieldset[2]/div/div/input");
+    private final By fieldPassword = By.xpath(".//input[@name = 'Пароль']");
 
     //локатор кнопки зарегистрироваться
     private final By buttonRegistration = By.xpath

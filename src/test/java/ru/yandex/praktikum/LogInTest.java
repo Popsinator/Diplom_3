@@ -1,5 +1,6 @@
 package ru.yandex.praktikum;
 
+import io.restassured.response.ValidatableResponse;
 import org.apache.commons.lang3.RandomStringUtils;
 import org.junit.After;
 import org.junit.Before;
@@ -14,12 +15,15 @@ import static org.junit.Assert.assertTrue;
 @RunWith(Parameterized.class)
 public class LogInTest {
     private WebDriver driver;
-    MainPage page;
-    String name;
-    String email;
-    String password;
-    int count = 10;
-    boolean temp;
+    private UserClient userClient;
+    private MainPage page;
+    private User user;
+    private String name;
+    private String email;
+    private String password;
+    private String accessToken;
+    private int count = 10;
+    private boolean temp;
 
     public LogInTest(boolean temp) {
         this.temp = temp;
@@ -35,25 +39,24 @@ public class LogInTest {
 
     @Before
     public void startUp() {
+        name = RandomStringUtils.randomAlphabetic(count);
+        email = RandomStringUtils.randomAlphabetic(count) + "@mail.ru";
+        password = RandomStringUtils.randomAlphabetic(count);
+        user = new User(email, password, name);
+        userClient = new UserClient();
+        ValidatableResponse responseCreate = userClient.createUser(user);
+        accessToken = responseCreate.extract().path("accessToken");
         if (temp) {
             System.setProperty("webdriver.chrome.driver",
                     "c:\\Users\\Public\\Java\\QADiplomChapterThree\\Diplom_3\\src\\main\\resources\\yandexdriver.exe");
         }
         driver = new ChromeDriver();
         page = new MainPage(driver);
-        name = RandomStringUtils.randomAlphabetic(count);
-        email = RandomStringUtils.randomAlphabetic(count) + "@mail.ru";
-        password = RandomStringUtils.randomAlphabetic(count);
     }
 
     @Test
     public void logInAcrossButtonOnMainTest() {
         boolean flag = page.open()
-                .clickPersonalAccountButton()
-                .clickRegistrationButton()
-                .registrationUser(name, email, password)
-                .expectPersonalAccount()
-                .clickConstructorButton()
                 .clickGoInAccountButton()
                 .logInUser(email, password)
                 .expectMainPage()
@@ -64,11 +67,6 @@ public class LogInTest {
     @Test
     public void logInAcrossPersonalAccountTest() {
         boolean flag = page.open()
-                .clickPersonalAccountButton()
-                .clickRegistrationButton()
-                .registrationUser(name, email, password)
-                .expectPersonalAccount()
-                .clickConstructorButton()
                 .clickPersonalAccountButton()
                 .logInUser(email, password)
                 .expectMainPage()
@@ -81,9 +79,6 @@ public class LogInTest {
         boolean flag = page.open()
                 .clickPersonalAccountButton()
                 .clickRegistrationButton()
-                .registrationUser(name, email, password)
-                .expectPersonalAccount()
-                .clickRegistrationButton()
                 .clickButtonInOnPageRegistration()
                 .logInUser(email, password)
                 .expectMainPage()
@@ -95,9 +90,6 @@ public class LogInTest {
     public void logInAcrossFormReanimatePasswordTest() {
         boolean flag = page.open()
                 .clickPersonalAccountButton()
-                .clickRegistrationButton()
-                .registrationUser(name, email, password)
-                .expectPersonalAccount()
                 .clickReanimatePasswordButton()
                 .clickLogInButton()
                 .logInUser(email, password)
@@ -110,9 +102,6 @@ public class LogInTest {
     public void logOutTest() {
         boolean flag = page.open()
                 .clickPersonalAccountButton()
-                .clickRegistrationButton()
-                .registrationUser(name, email, password)
-                .expectPersonalAccount()
                 .logInUser(email, password)
                 .expectMainPage()
                 .clickPersonalAccountButton()
@@ -125,6 +114,8 @@ public class LogInTest {
 
     @After
     public void teardown() {
+        //Удаление user
+        userClient.deleteUser(accessToken);
         // Закрытие браузера
         driver.quit();
     }

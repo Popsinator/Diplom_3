@@ -16,15 +16,15 @@ public class PageRegistration {
 
     //локатор поля ввода имени
     private final By fieldName = By.xpath
-            ("html/body/div[@id='root']/div/main/div/form/fieldset[1]/div/div/input");
+            (".//fieldset[1]/div/div/input");
 
     //локатор поля ввода email
     private final By fieldEmail = By.xpath
-            ("html/body/div[@id='root']/div/main/div/form/fieldset[2]/div/div/input");
+            (".//fieldset[2]/div/div/input");
 
     //локатор поля ввода password
     private final By fieldPassword = By.xpath
-            ("html/body/div[@id='root']/div/main/div/form/fieldset[3]/div/div/input");
+            (".//fieldset[3]/div/div/input");
 
     //локатор кнопки зарегистрироваться
     private final By buttonRegistration = By.xpath(".//button[@class = " +

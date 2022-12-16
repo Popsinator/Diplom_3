@@ -38,13 +38,23 @@ public class MainPage {
     private final By buttonSous = By.xpath(".//span[@class = 'text text_type_main-default']" +
             "[text() = 'Соусы']");
 
-    //локатор Соуса Spicy-X
-    private final By buttonSousSpicyX = By.xpath(".//p[@class = 'BurgerIngredient_ingredient__text__yp3dH']" +
-            "[text() = 'Соус Spicy-X']");
+    //подсветка раздела Соусы
+    private final By buttonSousLight = By.xpath(".//div[@class = 'tab_tab__1SPyG tab_tab_type_current__2BEPc" +
+            " pt-4 pr-10 pb-4 pl-10 noselect']" +
+            "/span[@class = 'text text_type_main-default'][text() = 'Соусы']");
+
+    //локатор подсветки
+    private final By buttonLight = By.xpath(".//div[@class = 'tab_tab__1SPyG tab_tab_type_current__2BEPc" +
+            " pt-4 pr-10 pb-4 pl-10 noselect']");
 
     //локатор кнопки Булки
     private final By buttonBulks = By.xpath(".//span[@class = 'text text_type_main-default']" +
             "[text() = 'Булки']");
+
+    //подсветка раздела Булки
+    private final By buttonBulksLight = By.xpath(".//div[@class = 'tab_tab__1SPyG tab_tab_type_current__2BEPc" +
+            " pt-4 pr-10 pb-4 pl-10 noselect']" +
+            "/span[@class = 'text text_type_main-default'][text() = 'Булки']");
 
     //локатор Флюоресцентной булки R2-D3
     private final By buttonFlBulksR2D3 = By.xpath(".//p[@class = 'BurgerIngredient_ingredient__text__yp3dH']" +
@@ -54,48 +64,56 @@ public class MainPage {
     private final By buttonFillings = By.xpath(".//span[@class = 'text text_type_main-default']" +
             "[text() = 'Начинки']");
 
+    //подсветка раздела Начинки
+    private final By buttonFillingsLight = By.xpath(".//div[@class = 'tab_tab__1SPyG tab_tab_type_current__2BEPc" +
+            " pt-4 pr-10 pb-4 pl-10 noselect']" +
+            "/span[@class = 'text text_type_main-default'][text() = 'Начинки']");
+
     //локатор Мяса бессмертных моллюсков Protostomia
     private final By buttonFillingsProtostomia = By.xpath(".//p[@class = 'BurgerIngredient_ingredient__text__yp3dH']" +
             "[text() = 'Мясо бессмертных моллюсков Protostomia']");
 
 
-    public MainPage clickSousButton() {
+    public MainPage clickSousButton() throws InterruptedException {
         if (driver.findElement(buttonSous).isDisplayed()) {
             driver.findElement(buttonSous).click();
         }
-        new WebDriverWait(driver, 1000).until(ExpectedConditions.
-                textToBePresentInElementLocated(buttonSousSpicyX, "Соус Spicy-X"));
+        new WebDriverWait(driver, 1000).until(ExpectedConditions
+                .visibilityOfElementLocated(buttonSousLight));
+        Thread.sleep(500);
         return this;
     }
 
-    public MainPage clickBulksButton() {
+    public MainPage clickBulksButton() throws InterruptedException {
         if (driver.findElement(buttonBulks).isDisplayed()) {
             driver.findElement(buttonBulks).click();
         }
-        new WebDriverWait(driver, 1000).until(ExpectedConditions.
-                textToBePresentInElementLocated(buttonFlBulksR2D3, "Флюоресцентная булка R2-D3"));
+        new WebDriverWait(driver, 1000).until(ExpectedConditions
+                .visibilityOfElementLocated(buttonBulksLight));
+        Thread.sleep(500);
         return this;
     }
 
-    public MainPage clickFillingsButton() {
+    public MainPage clickFillingsButton() throws InterruptedException {
         if (driver.findElement(buttonFillings).isDisplayed()) {
             driver.findElement(buttonFillings).click();
         }
-        new WebDriverWait(driver, 1000).until(ExpectedConditions.
-                textToBePresentInElementLocated(buttonFillingsProtostomia, "Мясо бессмертных моллюсков Protostomia"));
+        new WebDriverWait(driver, 1000).until(ExpectedConditions
+                .visibilityOfElementLocated(buttonFillingsLight));
+        Thread.sleep(1000);
         return this;
     }
 
-    public boolean checkButtonFillingsProtostomia() {
-        return driver.findElement(buttonFillingsProtostomia).isDisplayed();
+    public boolean checkButtonFillingsLight() {
+        return driver.findElement(buttonFillingsLight).isDisplayed();
     }
 
-    public boolean checkButtonFlBulksR2D3() {
-        return driver.findElement(buttonFlBulksR2D3).isDisplayed();
+    public boolean checkButtonBulksLight() {
+        return driver.findElement(buttonBulksLight).isDisplayed();
     }
 
-    public boolean checkButtonSousSpicyX() {
-        return driver.findElement(buttonSousSpicyX).isDisplayed();
+    public boolean checkButtonSousLight() {
+        return driver.findElement(buttonSousLight).isDisplayed();
     }
 
     public PagePersonalAccount clickPersonalAccountButton() {
