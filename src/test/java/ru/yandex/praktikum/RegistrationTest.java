@@ -23,9 +23,9 @@ public class RegistrationTest {
     private String email;
     private String password;
     private String passwordIncorrect;
-    int count = 10;
-    int countForPasswordIncorrect = 1;
-    boolean checkNeedSetYandexDriver;
+    private int count = 10;
+    private int countForPasswordIncorrect = 1;
+    private boolean checkNeedSetYandexDriver;
 
     public RegistrationTest(boolean checkNeedSetYandexDriver) {
         this.checkNeedSetYandexDriver = checkNeedSetYandexDriver;
@@ -91,11 +91,10 @@ public class RegistrationTest {
 
     @After
     public void teardown() {
-        //переход в личный кабинет, где я могу получить токен для удаления
+        //получения токена для удаления на главной странице после логина
         page.open()
                 .clickPersonalAccountButton()
-                .logInUser(email, password)
-                .clickPersonalAccountButton();
+                .logInUser(email, password);
         //Получение токена для удаления созданного пользователя
         WebStorage webStorage = (WebStorage) new Augmenter().augment(driver);
         LocalStorage localStorage = webStorage.getLocalStorage();

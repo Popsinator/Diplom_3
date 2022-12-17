@@ -1,6 +1,5 @@
 package ru.yandex.praktikum;
 
-import org.apache.commons.lang3.RandomStringUtils;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
@@ -15,15 +14,12 @@ import static org.junit.Assert.assertTrue;
 public class TransitionTest {
 
     private WebDriver driver;
-    MainPage page;
-    String name;
-    String email;
-    String password;
-    int count = 10;
-    boolean temp;
+    private MainPage page;
+    private int count = 10;
+    private boolean checkNeedSetYandexDriver;
 
-    public TransitionTest(boolean temp) {
-        this.temp = temp;
+    public TransitionTest(boolean checkNeedSetYandexDriver) {
+        this.checkNeedSetYandexDriver = checkNeedSetYandexDriver;
     }
 
     @Parameterized.Parameters
@@ -36,15 +32,12 @@ public class TransitionTest {
 
     @Before
     public void startUp() {
-        if (temp) {
+        if (checkNeedSetYandexDriver) {
             System.setProperty("webdriver.chrome.driver",
                     "c:\\Users\\Public\\Java\\QADiplomChapterThree\\Diplom_3\\src\\main\\resources\\yandexdriver.exe");
         }
         driver = new ChromeDriver();
         page = new MainPage(driver);
-        name = RandomStringUtils.randomAlphabetic(count);
-        email = RandomStringUtils.randomAlphabetic(count) + "@mail.ru";
-        password = RandomStringUtils.randomAlphabetic(count);
     }
 
     @Test
@@ -79,7 +72,7 @@ public class TransitionTest {
     }
 
     @Test
-    public void transitionInSousTest() throws InterruptedException {
+    public void transitionInSousTest() {
         boolean flag = page.open()
                 .clickSousButton()
                 .checkButtonSousLight();
@@ -87,7 +80,7 @@ public class TransitionTest {
     }
 
     @Test
-    public void transitionInBulkTest() throws InterruptedException {
+    public void transitionInBulkTest() {
         boolean flag = page.open()
                 .clickSousButton()
                 .clickBulksButton()
@@ -96,7 +89,7 @@ public class TransitionTest {
     }
 
     @Test
-    public void transitionInFillingsTest() throws InterruptedException {
+    public void transitionInFillingsTest() {
         boolean flag = page.open()
                 .clickFillingsButton()
                 .checkButtonFillingsLight();

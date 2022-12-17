@@ -5,7 +5,6 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-
 public class MainPage {
 
     //драйвер для браузера
@@ -43,10 +42,6 @@ public class MainPage {
             " pt-4 pr-10 pb-4 pl-10 noselect']" +
             "/span[@class = 'text text_type_main-default'][text() = 'Соусы']");
 
-    //локатор подсветки
-    private final By buttonLight = By.xpath(".//div[@class = 'tab_tab__1SPyG tab_tab_type_current__2BEPc" +
-            " pt-4 pr-10 pb-4 pl-10 noselect']");
-
     //локатор кнопки Булки
     private final By buttonBulks = By.xpath(".//span[@class = 'text text_type_main-default']" +
             "[text() = 'Булки']");
@@ -55,10 +50,6 @@ public class MainPage {
     private final By buttonBulksLight = By.xpath(".//div[@class = 'tab_tab__1SPyG tab_tab_type_current__2BEPc" +
             " pt-4 pr-10 pb-4 pl-10 noselect']" +
             "/span[@class = 'text text_type_main-default'][text() = 'Булки']");
-
-    //локатор Флюоресцентной булки R2-D3
-    private final By buttonFlBulksR2D3 = By.xpath(".//p[@class = 'BurgerIngredient_ingredient__text__yp3dH']" +
-            "[text() = 'Флюоресцентная булка R2-D3']");
 
     //локатор кнопки Начинки
     private final By buttonFillings = By.xpath(".//span[@class = 'text text_type_main-default']" +
@@ -69,38 +60,55 @@ public class MainPage {
             " pt-4 pr-10 pb-4 pl-10 noselect']" +
             "/span[@class = 'text text_type_main-default'][text() = 'Начинки']");
 
-    //локатор Мяса бессмертных моллюсков Protostomia
-    private final By buttonFillingsProtostomia = By.xpath(".//p[@class = 'BurgerIngredient_ingredient__text__yp3dH']" +
-            "[text() = 'Мясо бессмертных моллюсков Protostomia']");
+    //раздел Начинки без подсветки
+    private final By buttonFillingsWithoutLight = By.xpath(".//div[@class = 'tab_tab__1SPyG  pt-4 pr-10 pb-4 pl-10 noselect']" +
+             "/span[@class = 'text text_type_main-default'][text() = 'Начинки']");
+
+    //раздел Булки без подсветки
+    private final By buttonBulksWithoutLight = By.xpath(".//div[@class = 'tab_tab__1SPyG  pt-4 pr-10 pb-4 pl-10 noselect']" +
+            "/span[@class = 'text text_type_main-default'][text() = 'Булки']");
+
+    //раздел Соусы без подсветки
+    private final By buttonSousWithoutLight = By.xpath(".//div[@class = 'tab_tab__1SPyG  pt-4 pr-10 pb-4 pl-10 noselect']" +
+            "/span[@class = 'text text_type_main-default'][text() = 'Соусы']");
 
 
-    public MainPage clickSousButton() throws InterruptedException {
+    public MainPage clickSousButton() {
         if (driver.findElement(buttonSous).isDisplayed()) {
             driver.findElement(buttonSous).click();
         }
-        new WebDriverWait(driver, 1000).until(ExpectedConditions
-                .visibilityOfElementLocated(buttonSousLight));
-        Thread.sleep(500);
+        new WebDriverWait(driver, 2000)
+                .until(ExpectedConditions.elementToBeClickable(buttonBulksWithoutLight));
+        new WebDriverWait(driver, 2000)
+                .until(ExpectedConditions.elementToBeClickable(buttonFillingsWithoutLight));
+        new WebDriverWait(driver, 2000)
+                .until(ExpectedConditions.elementToBeClickable(buttonSousLight));
         return this;
     }
 
-    public MainPage clickBulksButton() throws InterruptedException {
+    public MainPage clickBulksButton() {
         if (driver.findElement(buttonBulks).isDisplayed()) {
             driver.findElement(buttonBulks).click();
         }
-        new WebDriverWait(driver, 1000).until(ExpectedConditions
-                .visibilityOfElementLocated(buttonBulksLight));
-        Thread.sleep(500);
+        new WebDriverWait(driver, 2000)
+                .until(ExpectedConditions.elementToBeClickable(buttonSousWithoutLight));
+        new WebDriverWait(driver, 2000)
+                .until(ExpectedConditions.elementToBeClickable(buttonFillingsWithoutLight));
+        new WebDriverWait(driver, 2000)
+                .until(ExpectedConditions.elementToBeClickable(buttonBulksLight));
         return this;
     }
 
-    public MainPage clickFillingsButton() throws InterruptedException {
+    public MainPage clickFillingsButton() {
         if (driver.findElement(buttonFillings).isDisplayed()) {
             driver.findElement(buttonFillings).click();
         }
-        new WebDriverWait(driver, 1000).until(ExpectedConditions
-                .visibilityOfElementLocated(buttonFillingsLight));
-        Thread.sleep(1000);
+        new WebDriverWait(driver, 2000)
+                .until(ExpectedConditions.elementToBeClickable(buttonBulksWithoutLight));
+        new WebDriverWait(driver, 2000)
+                .until(ExpectedConditions.elementToBeClickable(buttonSousWithoutLight));
+        new WebDriverWait(driver, 10000)
+                .until(ExpectedConditions.elementToBeClickable(buttonFillingsLight));
         return this;
     }
 

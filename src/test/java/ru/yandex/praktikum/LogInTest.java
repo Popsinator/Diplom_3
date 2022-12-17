@@ -23,10 +23,10 @@ public class LogInTest {
     private String password;
     private String accessToken;
     private int count = 10;
-    private boolean temp;
+    private boolean checkNeedSetYandexDriver;
 
     public LogInTest(boolean temp) {
-        this.temp = temp;
+        this.checkNeedSetYandexDriver = checkNeedSetYandexDriver;
     }
 
     @Parameterized.Parameters
@@ -46,7 +46,7 @@ public class LogInTest {
         userClient = new UserClient();
         ValidatableResponse responseCreate = userClient.createUser(user);
         accessToken = responseCreate.extract().path("accessToken");
-        if (temp) {
+        if (checkNeedSetYandexDriver) {
             System.setProperty("webdriver.chrome.driver",
                     "c:\\Users\\Public\\Java\\QADiplomChapterThree\\Diplom_3\\src\\main\\resources\\yandexdriver.exe");
         }
